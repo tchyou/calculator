@@ -252,5 +252,13 @@ describe('Arithmetic', function() {
               done();
           });
     });
+    it('mod 3 by 2', function(done) {
+      request.get('/arithmetic?operation=mod&operand1=3&operand2=2')
+          .expect(1)
+          .end(function(err, res) {
+              expect(res.body).to.eql({ result: null });
+              done();
+          });
+    });
   });
 });
